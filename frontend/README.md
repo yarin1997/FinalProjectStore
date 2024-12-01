@@ -82,3 +82,36 @@ The application supports user authentication, profile management, product browsi
    ```bash
    git clone https://github.com/YOUR_USERNAME/FinalProjectStore.git
    cd FinalProjectStore
+2. **Install dependencies for both frontend and backend:**
+
+npm run build
+
+3. **Set up environment variables:**
+
+   Create a .env file in the backend directory with the following content:
+
+NODE_ENV=development
+
+PORT=5000
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
+
+PAYPAL_CLIENT_ID=your_paypal_client_id
+
+4. **Run the project:**
+
+   npm run dev
+
+5. **Data seeding (optional):**
+
+*To import initial data:*
+
+npm run data:import
+
+*To destroy existing data:*
+
+npm run data:destroy
+
+
