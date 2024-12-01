@@ -1,8 +1,11 @@
 Fullstack E-commerce Store Project
-Project Overview
+
+Project Overview:
+
 This is a fullstack e-commerce application built using the MERN stack:
 
 Frontend: React.js
+
 Backend: Node.js with Express.js
 Database: MongoDB
 The application supports user authentication, profile management, product browsing, purchasing via PayPal, and admin functionalities for managing products, users, and orders.
