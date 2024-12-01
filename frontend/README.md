@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+Fullstack E-commerce Store Project
+Project Overview
+This is a fullstack e-commerce application built using the MERN stack:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend: React.js
+Backend: Node.js with Express.js
+Database: MongoDB
+The application supports user authentication, profile management, product browsing, purchasing via PayPal, and admin functionalities like product and order management.
 
-## Available Scripts
+Features
+User Features:
+Authentication: Register, log in, and log out.
+Profile Management: Update personal information.
+Shopping: Browse products, add them to the cart, and purchase using PayPal.
+Order History: View past orders.
+Admin Features:
+User Management: View, edit, and delete users.
+Product Management: Add, edit, or delete products.
+Order Management: View and manage customer orders.
+Admin Login:
+Email: admin@gmail.com
+Password: 123456
+Tech Stack
+Frontend:
+React: Core framework for building the user interface.
+React-Bootstrap: UI components styled with Bootstrap.
+React-Router-Dom: Client-side routing.
+React-Icons: Icons for enhanced UI.
+React-Redux: State management.
+Axios: HTTP requests to interact with the backend.
+React-Toastify: Notifications and alerts.
+@paypal/react-paypal-js: Integration for PayPal payments.
+Backend:
+Node.js: Runtime environment for server-side JavaScript.
+Express.js: Framework for building web APIs.
+Mongoose: MongoDB object modeling for schema and data interaction.
+JSON Web Tokens (JWT): User authentication and authorization.
+Bcrypt.js: Password hashing.
+Multer: File uploading.
+Cookie-Parser: Parse cookies for session management.
+Colors: Console logging with styled messages.
+Dev Tools:
+Nodemon: Automatically restarts the server on code changes.
+Concurrently: Run multiple commands concurrently (e.g., frontend and backend servers).
+Dotenv: Environment variable management.
+Installation and Setup
+Prerequisites:
+Node.js and npm installed.
+MongoDB instance running locally or on the cloud.
+Steps:
+Clone the repository:
 
-In the project directory, you can run:
+bash
+Copy code
+git clone https://github.com/YOUR_USERNAME/FinalProjectStore.git
+cd FinalProjectStore
+Install dependencies for both frontend and backend:
 
-### `npm start`
+bash
+Copy code
+npm run build
+Set up environment variables:
+Create a .env file in the backend directory and configure the following:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+makefile
+Copy code
+NODE_ENV=development
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+PAYPAL_CLIENT_ID=your_paypal_client_id
+Run the project:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Start both frontend and backend:
+bash
+Copy code
+npm run dev
+Data seeding (optional):
 
-### `npm test`
+Import initial data:
+bash
+Copy code
+npm run data:import
+Destroy data:
+bash
+Copy code
+npm run data:destroy
+Scripts
+Command	Description
+npm run dev	Run both frontend and backend in development mode.
+npm run client - Run the React frontend only.
+npm run server - Run the Node.js backend only.
+npm run build  - Build the frontend for production.
+npm run data:import	Import initial data to the database.
+npm run data:destroy	Destroy all data from the database.
+API Endpoints
+User Endpoints:
+POST /api/users/login: Log in a user.
+POST /api/users/register: Register a new user.
+GET /api/users/profile: Get user profile.
+PUT /api/users/profile: Update user profile.
+Product Endpoints:
+GET /api/products: Get all products.
+POST /api/products: Add a new product (Admin only).
+PUT /api/products/:id: Update a product (Admin only).
+DELETE /api/products/:id: Delete a product (Admin only).
+Order Endpoints:
+POST /api/orders: Create a new order.
+GET /api/orders: Get all orders (Admin only).
+PUT /api/orders/:id/deliver: Mark an order as delivered (Admin only).
+Deployment
+You can deploy this project on platforms like Heroku (for the backend) and Netlify or Vercel (for the frontend). Ensure environment variables are correctly set on the hosting platform.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+License
+This project is licensed under the ISC License.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy shopping and managing your e-commerce platform! 😊
